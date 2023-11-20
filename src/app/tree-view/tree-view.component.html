@@ -1,5 +1,13 @@
-<kendo-treeview
 
+<!-- Document 
+
+=>The TreeView renders the expand icons only after the children and hasChildren functions are defined.
+Link for Kendo treeview ui https://www.telerik.com/kendo-angular-ui/components/treeview/expand-state/
+-->
+
+<!-- first Kendo UI - Basic Expanded -->
+
+<kendo-treeview
 [nodes]="data"
 textField="text"
 kendoTreeViewHierarchyBinding
@@ -15,17 +23,22 @@ kendoTreeViewCheckable
 >
 </kendo-treeview>
 <hr/>
-<!-- <kendo-treeview
+<!-- second Kendo UI - Built-in Directives for Expandable -->
+<kendo-treeview
  [nodes]="data1"
  textField="text"
  kendoTreeViewHierarchyBinding
  childrenField="items"
  [filterable]="true"
  kendoTreeViewCheckable
+ kendoTreeViewExpandable
+ [(expandedKeys)]="expandedKeys"
 [(checkedKeys)]="checkedKeys"
+[children]="fetchChildren"
+[hasChildren]="hasChildren1"
 >
   
-</kendo-treeview> -->
+</kendo-treeview>
 
 <!-- <kendo-treeview
 [nodes]="program"

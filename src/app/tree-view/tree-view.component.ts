@@ -7,9 +7,9 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./tree-view.component.css']
 })
 export class TreeViewComponent {
- public expandedKeys: any[] = ['0', '1','2'];
+ public expandedKeys: any[] = ['0', '1'];
 
- public checkedKeys: any[] = ['2_2'];
+ public checkedKeys: any[] = ['2_2','1_1','0_0'];//it is use for checked the check box
 
   public data1: any[] = [
       {
@@ -79,7 +79,17 @@ export class TreeViewComponent {
   }
 
   public children=(dataitem:any):Observable<any[]>=>of(dataitem.items)
+  // here children is property and (dataitem:any):Oberservable<any[]>=of(dataitem.items) is arrow function that take one one parameter
+  //we can write this  like this 
+ /* public children=(dataitem:any):Observable<any[]>{return of(dataitem.items)} */
   public hasChildren=(dataitems:any):boolean=>!!dataitems.items;
+
+
+
+
+  
+  public hasChildren1 = (item: any) => item.items && item.items.length > 0;
+  public fetchChildren = (item: any) => of(item.items);
   // public program:any[]=[
   //   {lang:'Backend lang',
   //   Items:[

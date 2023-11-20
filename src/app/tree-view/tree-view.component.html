@@ -1,0 +1,38 @@
+<kendo-treeview
+
+[nodes]="data"
+textField="text"
+kendoTreeViewHierarchyBinding
+childrenField="items"
+[filterable]="true"
+[isExpanded]="isExpanded"
+(collapse)="handleCollapse($event)"
+(expand)="handleExpanded($event)"
+kendoTreeViewCheckable
+[hasChildren]="hasChildren"
+[children]="children"
+[(checkedKeys)]="checkedKeys"
+>
+</kendo-treeview>
+<hr/>
+<!-- <kendo-treeview
+ [nodes]="data1"
+ textField="text"
+ kendoTreeViewHierarchyBinding
+ childrenField="items"
+ [filterable]="true"
+ kendoTreeViewCheckable
+[(checkedKeys)]="checkedKeys"
+>
+  
+</kendo-treeview> -->
+
+<!-- <kendo-treeview
+[nodes]="program"
+textField="lang"
+kendoTreeViewHierarchyBinding
+childrenField="Items"
+[filterable]="true"
+kendoTreeViewCheckable
+>
+</kendo-treeview> -->
